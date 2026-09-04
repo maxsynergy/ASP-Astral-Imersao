@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imersão em Inglês | Astral Pedagógico — Hotel Le Canton</title>
+  <meta name="description" content="Imersão em Inglês no Hotel Le Canton. 24h de inglês vivo para alunos do 5º ao 7º ano. Intercâmbio sem sair do país. Astral Pedagógico — 30+ anos de turismo pedagógico.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0f4c81;
+      --primary-dark: #0a3559;
+      --accent: #e8a838;
+      --accent-hover: #d4942a;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --white: #ffffff;
+      --card-shadow: 0 4px 24px rgba(15, 76, 129, 0.08);
+      --radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .header-cta {
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .header-cta:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Hero */
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(10, 53, 89, 0.88) 0%, rgba(15, 76, 129, 0.68) 48%, rgba(15, 76, 129, 0.28) 100%),
+        url('img/le-canton-evento.jpg') center center / cover no-repeat;
+      color: white;
+      padding: 72px 0 80px;
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(232, 168, 56, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 720px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero .subtitle {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .hero .desc {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      margin-bottom: 32px;
+      max-width: 560px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #1a1a1a;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .hero-cta:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Problem */
+    .problem {
+      padding: 64px 0;
+      background: var(--white);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .problem-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .problem h2 {
+      font-size: 1.75rem;
+      margin-bottom: 16px;
+      color: var(--primary-dark);
+    }
+
+    .problem p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+
+    .problem-highlight {
+      background: #fef3e2;
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 10px 10px 0;
+      margin-top: 20px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* Solution cards */
+    .solution {
+      padding: 72px 0;
+      background: var(--bg);
+    }
+
+    .solution-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 48px;
+    }
+
+    .solution-header h2 {
+      font-size: 2rem;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .solution-header p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #e0f0ff, #c5e3ff);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: var(--primary-dark);
+    }
+
+    .feature-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* Timeline / Day flow */
+    .day-flow {
+      padding: 72px 0;
+      background: var(--white);
+    }
+
+    .day-flow h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .day-flow .sub {
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: 48px;
+      font-size: 1.1rem;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .timeline {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .timeline-item {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--bg);
+      border-radius: var(--radius);
+      border: 1px solid #e2e8f0;
+    }
+
+    .timeline-num {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin: 0 auto 14px;
+      font-size: 0.95rem;
+    }
+
+    .timeline-item h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--primary-dark);
+    }
+
+    .timeline-item p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* Activities */
+    .activities {
+      padding: 72px 0;
+      background: linear-gradient(180deg, #0f4c81 0%, #0a3559 100%);
+      color: white;
+    }
+
+    .activities h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .activities .sub {
+      text-align: center;
+      opacity: 0.85;
+      margin-bottom: 48px;
+      font-size: 1.1rem;
+    }
+
+    .act-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .act-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .act-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .act-card .icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .act-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .act-card p {
+      opacity: 0.85;
+      font-size: 0.95rem;
+    }
+
+    /* Engagement */
+    .engagement {
+      padding: 72px 0;
+      background: var(--bg);
+    }
+
+    .engagement-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .engagement-header h2 {
+      font-size: 2rem;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .engagement-header p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .eng-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .eng-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .eng-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--card-shadow);
+      text-align: center;
+    }
+
+    .eng-card .emoji {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .eng-card h3 {
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .eng-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* Trust */
+    .trust {
+      padding: 64px 0;
+      background: var(--white);
+    }
+
+    .trust-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .trust-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .trust h2 {
+      font-size: 1.85rem;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+    }
+
+    .trust p {
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+
+    .trust-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      text-align: left;
+    }
+
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    .trust-box {
+      background: #f0f7ff;
+      border-radius: var(--radius);
+      padding: 32px;
+      border: 1px solid #d0e4f7;
+    }
+
+    .trust-box h3 {
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+    }
+
+    .trust-box ul {
+      list-style: none;
+    }
+
+    .trust-box li {
+      padding: 8px 0;
+      color: var(--text);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .trust-box li::before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Why school */
+    .why {
+      padding: 72px 0;
+      background: var(--bg);
+    }
+
+    .why h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .why .sub {
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: 48px;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .why-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--card-shadow);
+      border-top: 4px solid var(--accent);
+    }
+
+    .why-card h3 {
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--primary) 0%, #1a6bb0 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2.1rem;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      max-width: 520px;
+      margin: 0 auto 32px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #1a1a1a;
+      padding: 16px 36px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .cta-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .cta-note {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      opacity: 0.75;
+    }
+
+    .footer-logo {
+      display: block;
+      width: 150px;
+      height: auto;
+      margin: 0 auto 20px;
+      border-radius: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 32px 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* Target badge */
+    .target {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+
+    /* WhatsApp Flutuante */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 24px;
+      right: 24px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.25);
+      z-index: 9999;
+      transition: transform .2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+
+    /* Novas classes para imagens */
+    .img-rounded {
+      border-radius: var(--radius);
+      box-shadow: 0 4px 24px rgba(15, 76, 129, 0.1);
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">Astral <span>Pedagógico</span></a>
+      <a href="#contato" class="header-cta">Quero saber mais</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Imersão em Inglês no Hotel Le Canton">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">30+ anos de turismo pedagógico</div>
+        <h1>Imersão em Inglês</h1>
+        <p class="subtitle">Uma experiência de intercâmbio sem sair do país</p>
+        <p class="desc">Uma noite no Hotel Le Canton onde a comunicação em inglês continua fora da sala — nas atividades, nos esportes, nas dinâmicas.</p>
+        <a href="#contato" class="hero-cta">Quero levar para minha escola →</a>
+        <div class="target">🎒 Alunos do 5º ao 7º ano</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="problem">
+    <div class="container">
+      <div class="problem-grid">
+        <div>
+          <span class="section-label">O desafio</span>
+          <h2>Sua escola é bilíngue.<br>E seus alunos fazem atividade extraclasse em português?</h2>
+          <p>O inglês fica na sala de aula. Passeios, eventos, excursões — tudo fora da escola acontece em português.</p>
+          <p>A imersão se perde no portão. A promessa bilíngue termina onde começa a experiência real.</p>
+        </div>
+        <div>
+          <div class="problem-highlight">
+            A Imersão em Inglês resolve isso: 24 horas de inglês vivo, com supervisão integral, diversão e aprendizado — no Hotel Le Canton.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="solution">
+    <div class="container">
+      <div class="solution-header">
+        <span class="section-label">A experiência</span>
+        <h2>24h de Inglês. Imersão total no idioma.</h2>
+        <p>Intercâmbio sem sair do país. Supervisão integral. Diversão e aprendizado na prática.</p>
+      </div>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">🗣️</div>
+          <h3>Inglês o tempo todo</h3>
+          <p>Do check-in ao check-out, tudo em inglês: chegada, atividades, refeições, desafios e descanso.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Supervisão integral</h3>
+          <p>Acompanhamento em todas as etapas, com monitores especializados e protocolos de segurança.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Intercâmbio sem sair do país</h3>
+          <p>A fase ideal (5º ao 7º ano) para despertar o interesse pelo idioma e pela experiência de viajar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Day flow -->
+  <section class="day-flow">
+    <div class="container">
+      <h2>Uma noite de imersão</h2>
+      <p class="sub">Do check-in ao check-out, tudo em inglês.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-num">1</div>
+          <h3>Check-in</h3>
+          <p>Recepção e introdução em inglês</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-num">2</div>
+          <h3>Refeições</h3>
+          <p>Almoço e jantares com desafios</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-num">3</div>
+          <h3>Atividades</h3>
+          <p>Dinâmicas e workshops em inglês</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-num">4</div>
+          <h3>Check-out</h3>
+          <p>Encerramento e feedback em inglês</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities -->
+  <section class="activities">
+    <div class="container">
+      <h2>Aprender brincando</h2>
+      <p class="sub">Jogos, dinâmicas de grupo e esportes — o inglês aplicado na prática, sem caderno e sem pressão.</p>
+      <div class="act-grid">
+        <div class="act-card">
+          <div class="icon">🎮</div>
+          <h3>Jogos & Dinâmicas</h3>
+          <p>Atividades lúdicas em inglês que engajam e divertem.</p>
+        </div>
+        <div class="act-card">
+          <div class="icon">⚽</div>
+          <h3>Esportes</h3>
+          <p>Inglês em movimento — esportes e interações em grupo.</p>
+        </div>
+        <div class="act-card">
+          <div class="icon">🤝</div>
+          <h3>Interação em grupo</h3>
+          <p>Comunicação real no idioma, de forma natural e espontânea.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement -->
+  <section class="engagement">
+    <div class="container">
+      <div class="engagement-header">
+        <h2>Inglês o tempo todo</h2>
+        <p>Monitores, desafios e recompensas mantêm os alunos engajados — e falando inglês naturalmente.</p>
+      </div>
+      <div class="eng-grid">
+        <div class="eng-card">
+          <div class="emoji">👨‍🏫</div>
+          <h3>Monitores</h3>
+          <p>Guias especializados em inglês que acompanham cada momento.</p>
+        </div>
+        <div class="eng-card">
+          <div class="emoji">🎯</div>
+          <h3>Desafios</h3>
+          <p>Missões em inglês ao longo do dia para praticar de verdade.</p>
+        </div>
+        <div class="eng-card">
+          <div class="emoji">🏆</div>
+          <h3>Recompensas</h3>
+          <p>Engajamento e motivação constantes com reconhecimento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Diferenciais e Verdades -->
+  <section class="trust">
+    <div class="container">
+      <div class="trust-inner">
+        <div>
+          <span class="section-label">Quem somos</span>
+          <h2>30+ anos levando escolas para aprender</h2>
+          <p>A Astral Pedagógico tem mais de três décadas de experiência em turismo pedagógico.</p>
+          <p>Supervisão integral e protocolos de segurança em cada etapa da experiência.</p>
+          <div class="trust-stats">
+            <div class="stat">
+              <div class="stat-num">30+</div>
+              <div class="stat-label">Anos de experiência</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Supervisão integral</div>
+            </div>
+          </div>
+        </div>
+        <div class="trust-box">
+          <!-- IMAGEM DA FACHADA DO LE CANTON -->
+          <img class="img-rounded" src="img/astral-pedagogico.jpg" alt="Quem somos - Astral" style="margin-bottom: 20px;">
+          <h3>Protocolos de Segurança</h3>
+          <ul>
+            <li>Padrões rigorosos em cada atividade</li>
+            <li>Acompanhamento integral dos alunos</li>
+            <li>Equipe especializada e preparada</li>
+            <li>Ambiente controlado no Hotel Le Canton</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why school -->
+  <section class="why">
+    <div class="container">
+      <h2>Por que sua escola?</h2>
+      <p class="sub">Uma proposta pedagógica diferenciada que completa a promessa bilíngue da escola — sem custo operacional para ela.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>Sem custo operacional</h3>
+          <p>A escola não arca com despesas de organização. Modelo de parceria pensado para facilitar.</p>
+        </div>
+        <div class="why-card">
+          <h3>Parceria estratégica</h3>
+          <p>Proposta que se integra à identidade da escola e gera valor real para alunos e famílias.</p>
+        </div>
+        <div class="why-card">
+          <h3>Proposta diferenciada</h3>
+          <p>Complementa a identidade bilíngue com uma experiência extraclasse autêntica em inglês.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contato">
+    <div class="container">
+      <h2>Vamos conversar?</h2>
+      <p>Conheça o projeto completo e seja parceiro do lançamento. Descubra como levar a imersão em inglês para os seus alunos.</p>
+
+      <!-- IMAGEM DO GRUPO DE PESSOAS -->
+      <img class="img-rounded" src="img/le-canton-evento-jovens.jpg" alt="Grupo de participantes do evento" style="max-width: 500px; margin: 0 auto 24px; display: block;">
+
+      <a href="https://wa.me/5521998029163?text=Olá!%20Tenho%20interesse%20na%20Imersão%20em%20Inglês%20do%20Hotel%20Le%20Canton."
+          target="_blank" rel="noopener noreferrer" class="cta-btn">
+        Falar no WhatsApp →
+      </a>
+      <p class="cta-note">Entre em contato com a Astral Pedagógico e descubra as possibilidades.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <img class="footer-logo" src="img/astral-pedagogico-logo.jpg" alt="Astral Pedagógico">
+      <p><strong>Astral Pedagógico</strong> — 30+ anos de turismo pedagógico</p>
+      <p style="margin-top: 8px;">Imersão em Inglês · Hotel Le Canton</p>
+    </div>
+  </footer>
+
+  <a
+  href="https://wa.me/5521998029163?text=Olá!%20Tenho%20interesse%20na%20Imersão%20em%20Inglês%20do%20Hotel%20Le%20Canton."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Falar no WhatsApp"
+>
+  <img src="img/icons8-whatsapp-48.png">
+</a>
+
+</body>
+</html>
